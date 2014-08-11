@@ -1,28 +1,13 @@
-15640 
-=====
-如何跑Experiment
+In this project, I designed and implemented a Remote Method Invocation (RMI) facility for Java. In 
+other words, this facility provides a mechanism by which objects within one Java Virtual Machine 
+(JVM) can invoke methods on objects within another JVM, even if the target object resides within a 
+JVM hosted by a different, but network accessible, machine. It allows application developers to 
 
-0. cd to bin folder
+1. Name an object that reside among many hosts
 
-run server
-
-1. > rmiregistry
-
-
-2. > java -cp ./ -Djava.security.policy=./experiment/rmi.policy experiment.Server
-
-run client
-
-3. > java -cp ./ -Djava.security.policy=./experiment/rmi.policy experiment.Client
+2. Locate an object within many hosts
 
 
-stub.java 没有什么用，是我反汇编出来看rmic生成的stub代码
+3. Marshall methods and their parameters 
 
-
-有用的链接
-
-http://blog.csdn.net/wangjun88019014/article/details/4672520
-
-http://docs.oracle.com/javase/tutorial/rmi/running.html
-
-http://www.blogjava.net/boddi/archive/2006/10/11/74430.html
+4. Compile stub objects at runtime.
